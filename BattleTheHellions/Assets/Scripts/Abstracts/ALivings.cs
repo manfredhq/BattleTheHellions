@@ -58,7 +58,36 @@ public class ALivings : MonoBehaviour
 
     public void Attack()
     {
-        DealDamage(FightManager.instance.attacks.Attack(attackType, isHeroParty));
+        var targets = FightManager.instance.attacks.Attack(attackType, isHeroParty);
+        StartCoroutine(positionChangement(targets));
+        DealDamage(targets);
+    }
+
+    IEnumerator positionChangement(List<ALivings> targets)
+    {
+        if(attackType == attTypes.single || attackType == attTypes.line) { 
+            Vector3 currentpos = gameObject.transform.position;
+            gameObject.transform.position = targets[0].transform.position;
+            yield return new WaitForSeconds(0.5f);
+            gameObject.transform.position = currentpos;
+        }
+        else if(attackType == attTypes.row)
+        {
+            if(targets.Count == 3)
+            {
+                Vector3 currentpos = gameObject.transform.position;
+                gameObject.transform.position = targets[1].transform.position;
+                yield return new WaitForSeconds(0.5f);
+                gameObject.transform.position = currentpos;
+            }
+            else
+            {
+                Vector3 currentpos = gameObject.transform.position;
+                gameObject.transform.position = targets[0].transform.position;
+                yield return new WaitForSeconds(0.5f);
+                gameObject.transform.position = currentpos;
+            }
+        }
     }
 
     // Update is called once per frame

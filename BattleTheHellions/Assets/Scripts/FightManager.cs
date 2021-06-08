@@ -40,14 +40,14 @@ public class FightManager : MonoBehaviour
     {
         
 
-        /*if (mobsParty.isTeamDefeated)
+        if (mobsParty.isTeamDefeated)
         {
             Debug.Log("Hero's party win");
         }
         else if(heroParty.isTeamDefeated)
         {
             Debug.Log("Mobs's party win");
-        }*/
+        }
     }
 
     IEnumerator Attack()
@@ -59,14 +59,14 @@ public class FightManager : MonoBehaviour
             {
                 Debug.Log("Attack");
                 if (heroParty.team[i] && !heroParty.defeatedCaracter.Contains(heroParty.team[i])) { 
-                heroParty.team[i].Attack();
+                    heroParty.team[i].Attack();
+                    yield return new WaitForSeconds(timeBetweenAttacks);
                 }
-                yield return new WaitForSeconds(timeBetweenAttacks);
                 if (mobsParty.team[i] && !mobsParty.defeatedCaracter.Contains(mobsParty.team[i]))
                 {
                     mobsParty.team[i].Attack();
+                    yield return new WaitForSeconds(timeBetweenAttacks);
                 }
-                yield return new WaitForSeconds(timeBetweenAttacks);
             }
         }
     }
