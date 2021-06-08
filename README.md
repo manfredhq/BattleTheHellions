@@ -49,7 +49,7 @@ But maybe in the future on steam/gog/epic who know.
 
 #### Visual ressources
 
-+ None
++ [Aekashics/Ækashics](http://www.akashics.moe/)  
 
 #### Scripting ressources
 
