@@ -31,7 +31,14 @@ public class FightManager : MonoBehaviour
     {
         attacks = new AttackTypes();
         heroParty = GameManager.instance.heroParty;
+        mobsParty.Setup();
+        heroParty.Setup();
+        StartCoroutine(StartFight());
+    }
 
+    IEnumerator StartFight()
+    {
+        yield return new WaitForSeconds(1f);
         StartCoroutine(Attack());
     }
 
