@@ -5,6 +5,7 @@ using UnityEngine;
 public class TeamManager : MonoBehaviour
 {
     public List<ALivings> team = new List<ALivings>();
+    public List<ALivings> defeatedCaracter = new List<ALivings>();
 
     public bool isTeamDefeated = false;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class TeamManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(team.Count == 0)
+        if (defeatedCaracter.Count == team.Count)
         {
             isTeamDefeated = true;
         }
@@ -28,5 +29,10 @@ public class TeamManager : MonoBehaviour
     public int count()
     {
         return team.Count;
+    }
+
+    public void DeathCaracter(ALivings character)
+    {
+        defeatedCaracter.Add(character);
     }
 }
