@@ -31,33 +31,43 @@ public class FightManager : MonoBehaviour
     {
         attacks = new AttackTypes();
         heroParty = GameManager.instance.heroParty;
-        heroParty.team[0].Attack();
+
+        StartCoroutine(Attack());
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (!mobsParty.isTeamDefeated && !heroParty.isTeamDefeated)
-        {
-            //Fight
-            for (int i = 0; i < mobsParty.count() + heroParty.count(); i++)
-            {
+        
 
-            }
-
-            for (int i = 0; i < mobsParty.count()+heroParty.count(); i++)
-            {
-                heroParty.team[i].Attack();
-            }
-        }
-
-        if (mobsParty.isTeamDefeated)
+        /*if (mobsParty.isTeamDefeated)
         {
             Debug.Log("Hero's party win");
         }
         else if(heroParty.isTeamDefeated)
         {
             Debug.Log("Mobs's party win");
+        }*/
+    }
+
+    IEnumerator Attack()
+    {
+        while (!mobsParty.isTeamDefeated && !heroParty.isTeamDefeated)
+        {
+            //Fight
+            for (int i = 0; i < Mathf.Max( mobsParty.count() ,heroParty.count()); i++)
+            {
+                Debug.Log("Attack");
+                if (heroParty.team[i] && !heroParty.defeatedCaracter.Contains(heroParty.team[i])) { 
+                heroParty.team[i].Attack();
+                }
+                yield return new WaitForSeconds(timeBetweenAttacks);
+                if (mobsParty.team[i] && !mobsParty.defeatedCaracter.Contains(mobsParty.team[i]))
+                {
+                    mobsParty.team[i].Attack();
+                }
+                yield return new WaitForSeconds(timeBetweenAttacks);
+            }
         }
     }
 }

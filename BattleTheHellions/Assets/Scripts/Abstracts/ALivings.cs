@@ -5,6 +5,7 @@ using UnityEngine;
 public class ALivings : MonoBehaviour
 {
     public attTypes attackType = attTypes.single;
+    public bool isHeroParty;
 
     public int maxHp;
     public int currentHp;
@@ -17,8 +18,8 @@ public class ALivings : MonoBehaviour
 
     public TeamManager team;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         currentHp = maxHp;
         currentAttack = maxAttack;
@@ -38,11 +39,6 @@ public class ALivings : MonoBehaviour
         if (currentHp <= 0) { Die(); }
     }
 
-    private void DealDamage(ALivings target)
-    {
-        Debug.Log(gameObject.name +" is targeting " + target.gameObject.name);
-        target.TakeDamage(currentAttack);
-    }
 
     private void DealDamage(List<ALivings> targets)
     {
@@ -62,7 +58,7 @@ public class ALivings : MonoBehaviour
 
     public void Attack()
     {
-        DealDamage(FightManager.instance.attacks.Attack(attackType));
+        DealDamage(FightManager.instance.attacks.Attack(attackType, isHeroParty));
     }
 
     // Update is called once per frame

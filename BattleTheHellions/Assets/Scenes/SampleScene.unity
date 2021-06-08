@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team:
   - {fileID: 1784340683}
+  defeatedCaracter: []
   isTeamDefeated: 0
 --- !u!1 &554138091
 GameObject:
@@ -312,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team:
   - {fileID: 926776783}
+  defeatedCaracter: []
   isTeamDefeated: 0
 --- !u!1 &705507993
 GameObject:
@@ -449,7 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d429d0e1a1bf79043b2fe327a3e3e86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenAttacks: 2
+  attacks: {fileID: 0}
   mobsParty: {fileID: 496496826}
+  heroParty: {fileID: 0}
 --- !u!1 &926776780
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,12 +550,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066cb309f9cb36489836c1a6696f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 0
+  isHeroParty: 1
   maxHp: 15
   currentHp: 0
   manaToCast: 50
   currentMana: 0
   maxAttack: 10
   currentAttack: 0
+  team: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,9 +781,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948545cf3cee6554c8340f1ad94943cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 15
+  attackType: 0
+  isHeroParty: 0
+  maxHp: 25
   currentHp: 0
   manaToCast: 80
   currentMana: 0
-  maxAttack: 30
+  maxAttack: 10
   currentAttack: 0
+  team: {fileID: 0}
