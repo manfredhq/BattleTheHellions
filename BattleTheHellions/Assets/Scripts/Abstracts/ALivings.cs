@@ -21,10 +21,17 @@ public class ALivings : MonoBehaviour
     public TeamManager team;
 
 
-    private void Awake()
+    private void Start()
     {
         currentHp = maxHp;
         currentAttack = maxAttack;
+        DontDestroyOnLoad(this.gameObject);
+    }
+    public void Setup()
+    {
+        currentHp = maxHp;
+        currentAttack = maxAttack;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void Heal(int amount)

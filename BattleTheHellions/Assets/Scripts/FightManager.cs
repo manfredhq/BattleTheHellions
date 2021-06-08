@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FightManager : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class FightManager : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -47,11 +47,19 @@ public class FightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (mobsParty.isTeamDefeated)
         {
-            Debug.Log("Hero's party win");
+            //TODO REWARDS
+
+            Player.instance.heroes[0].GetComponent<ALivings>().maxHp += 10;
+
+            Player.instance.team.Clean();
+            foreach (var  heroe in Player.instance.heroes)
+            {
+                heroe.SetActive(false);
+            }
+
+            GameManager.instance.loadScene(0);
         }
         else if(heroParty.isTeamDefeated)
         {

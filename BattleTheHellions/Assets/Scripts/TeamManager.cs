@@ -12,14 +12,31 @@ public class TeamManager : MonoBehaviour
 
     public bool isTeamDefeated = false;
 
+    bool isPlayerTeam = false;
     public void Setup()
     {
-        if(spawnPoints.Count == 0)
+        if(spawnPoints.Count == 0) { 
             spawnPoints = FightManager.instance.spawnPoints;
-        for (int i = 0; i < teamPrefab.Count; i++)
+            isPlayerTeam = true;
+        }
+        if (isPlayerTeam)
         {
-            var temp = Instantiate(teamPrefab[i], spawnPoints[i].transform);
-            team.Add(temp.GetComponent<ALivings>());
+            for (int i = 0; i < Player.instance.heroes.Count; i++)
+            {
+                Player.instance.heroes[i].SetActive(true);
+                Player.instance.heroes[i].GetComponent<ALivings>().Setup();
+                Player.instance.heroes[i].transform.SetPositionAndRotation(spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
+                team.Add(Player.instance.heroes[i].GetComponent<ALivings>());
+            }
+        }
+        else { 
+            for (int i = 0; i < teamPrefab.Count; i++)
+            {
+                var temp = Instantiate(teamPrefab[i], spawnPoints[i].transform);
+                team.Add(temp.GetComponent<ALivings>());
+                if (isPlayerTeam && !Player.instance.heroes.Contains(temp))
+                    Player.instance.heroes.Add(temp);
+            }
         }
         foreach (var member in team)
         {
@@ -56,5 +73,14 @@ public class TeamManager : MonoBehaviour
     public void DeathCaracter(ALivings character)
     {
         defeatedCaracter.Add(character);
+    }
+
+    public void Clean()
+    {
+        CancelInvoke("CheckTeamDefeated");
+        spawnPoints = new List<GameObject>();
+        defeatedCaracter = new List<ALivings>();
+        team = new List<ALivings>();
+        isTeamDefeated = false;
     }
 }

@@ -375,7 +375,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554138092}
-  - component: {fileID: 554138093}
   m_Layer: 0
   m_Name: HeroParty
   m_TagString: Untagged
@@ -403,29 +402,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &554138093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554138091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2e4e6a628362742ab0ffa0f43d8979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: []
-  defeatedCaracter: []
-  teamPrefab:
-  - {fileID: 4398488211284737178, guid: a3bc9e55646db6b4da5c3b7f34e02dfa, type: 3}
-  - {fileID: 4398488211284737178, guid: a3bc9e55646db6b4da5c3b7f34e02dfa, type: 3}
-  - {fileID: 4398488211284737178, guid: a3bc9e55646db6b4da5c3b7f34e02dfa, type: 3}
-  - {fileID: 7889049683976016812, guid: 8cee8a09e3ef85f46b2780e0ce449ba1, type: 3}
-  - {fileID: 7889049683976016812, guid: 8cee8a09e3ef85f46b2780e0ce449ba1, type: 3}
-  - {fileID: 7889049683976016812, guid: 8cee8a09e3ef85f46b2780e0ce449ba1, type: 3}
-  spawnPoints: []
-  isTeamDefeated: 0
 --- !u!1 &646081335
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20761b75289c2d641b6dca57a0b638fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroParty: {fileID: 554138093}
 --- !u!1 &1459600231
 GameObject:
   m_ObjectHideFlags: 0

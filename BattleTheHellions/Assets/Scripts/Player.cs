@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public TeamManager team;
     public static Player instance;
 
+
+    public List<GameObject> heroes = new List<GameObject>();
+
     private void Awake()
     {
         // if the singleton hasn't been initialized yet
@@ -22,7 +25,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (var prefab in team.teamPrefab)
+        {
+            var temp = Instantiate(prefab);
+            heroes.Add(temp);
+        }
     }
 
     // Update is called once per frame
