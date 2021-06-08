@@ -64,12 +64,23 @@ public class FightManager : MonoBehaviour
                         yield return new WaitForSeconds(timeBetweenAttacks);
                     }
                 }
+
+                if (mobsParty.isTeamDefeated)
+                {
+                    yield break;
+                }
+
                 if (mobsParty.count() > i) { 
                     if (!mobsParty.defeatedCaracter.Contains(mobsParty.team[i]))
                     {
                         mobsParty.team[i].Attack();
                         yield return new WaitForSeconds(timeBetweenAttacks);
                     }
+                }
+
+                if (heroParty.isTeamDefeated)
+                {
+                    yield break;
                 }
             }
         }
