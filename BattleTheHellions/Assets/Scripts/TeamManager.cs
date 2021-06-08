@@ -14,6 +14,8 @@ public class TeamManager : MonoBehaviour
 
     public void Setup()
     {
+        if(spawnPoints.Count == 0)
+            spawnPoints = FightManager.instance.spawnPoints;
         for (int i = 0; i < teamPrefab.Count; i++)
         {
             var temp = Instantiate(teamPrefab[i], spawnPoints[i].transform);
@@ -23,6 +25,8 @@ public class TeamManager : MonoBehaviour
         {
             member.team = this;
         }
+
+        InvokeRepeating("CheckTeamDefeated", 0.1f, 1f);
     }
 
     private void Start()
@@ -32,6 +36,11 @@ public class TeamManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    void CheckTeamDefeated()
     {
         if (defeatedCaracter.Count == team.Count)
         {

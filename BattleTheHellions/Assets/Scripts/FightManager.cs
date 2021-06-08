@@ -10,6 +10,8 @@ public class FightManager : MonoBehaviour
 
     public static FightManager instance;
 
+    public List<GameObject> spawnPoints = new List<GameObject>();
+
     public TeamManager mobsParty;
     public TeamManager heroParty;
 
@@ -29,10 +31,10 @@ public class FightManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        heroParty = Player.instance.team;
         attacks = new AttackTypes();
-        heroParty = GameManager.instance.heroParty;
-        mobsParty.Setup();
         heroParty.Setup();
+        mobsParty.Setup();
         StartCoroutine(StartFight());
     }
 
@@ -92,4 +94,5 @@ public class FightManager : MonoBehaviour
             }
         }
     }
+
 }

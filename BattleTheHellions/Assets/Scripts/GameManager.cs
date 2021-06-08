@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public TeamManager heroParty;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(test());
     }
 
     private void Awake()
@@ -30,5 +30,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator test()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(1);
     }
 }
