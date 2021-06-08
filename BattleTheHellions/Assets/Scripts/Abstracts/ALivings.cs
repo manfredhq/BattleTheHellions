@@ -7,6 +7,8 @@ public class ALivings : MonoBehaviour
     public attTypes attackType = attTypes.single;
     public bool isHeroParty;
 
+    public bool isRanged = false;
+
     public int maxHp;
     public int currentHp;
 
@@ -74,25 +76,43 @@ public class ALivings : MonoBehaviour
 
     IEnumerator positionChangement(List<ALivings> targets)
     {
-        if(attackType == attTypes.single || attackType == attTypes.line) { 
-            Vector3 currentpos = gameObject.transform.position;
-            gameObject.transform.position = targets[0].transform.position;
-            yield return new WaitForSeconds(0.5f);
-            gameObject.transform.position = currentpos;
-        }
-        else if(attackType == attTypes.row)
-        {
-            if(targets.Count == 3)
-            {
+        if (!isRanged) { 
+            if(attackType == attTypes.single || attackType == attTypes.line) { 
                 Vector3 currentpos = gameObject.transform.position;
-                gameObject.transform.position = targets[1].transform.position;
+                gameObject.transform.position = targets[0].transform.position;
+                yield return new WaitForSeconds(0.5f);
+                gameObject.transform.position = currentpos;
+            }
+            else if(attackType == attTypes.row)
+            {
+                if(targets.Count == 3)
+                {
+                    Vector3 currentpos = gameObject.transform.position;
+                    gameObject.transform.position = targets[1].transform.position;
+                    yield return new WaitForSeconds(0.5f);
+                    gameObject.transform.position = currentpos;
+                }
+                else
+                {
+                    Vector3 currentpos = gameObject.transform.position;
+                    gameObject.transform.position = targets[0].transform.position;
+                    yield return new WaitForSeconds(0.5f);
+                    gameObject.transform.position = currentpos;
+                }
+            }
+        }
+        else
+        {
+            if (isHeroParty) { 
+                Vector3 currentpos = gameObject.transform.position;
+                gameObject.transform.position += transform.right;
                 yield return new WaitForSeconds(0.5f);
                 gameObject.transform.position = currentpos;
             }
             else
             {
                 Vector3 currentpos = gameObject.transform.position;
-                gameObject.transform.position = targets[0].transform.position;
+                gameObject.transform.position -= transform.right;
                 yield return new WaitForSeconds(0.5f);
                 gameObject.transform.position = currentpos;
             }

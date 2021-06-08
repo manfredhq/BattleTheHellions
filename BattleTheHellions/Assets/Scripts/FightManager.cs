@@ -58,14 +58,18 @@ public class FightManager : MonoBehaviour
             for (int i = 0; i < Mathf.Max( mobsParty.count() ,heroParty.count()); i++)
             {
                 Debug.Log("Attack");
-                if (heroParty.team[i] && !heroParty.defeatedCaracter.Contains(heroParty.team[i])) { 
-                    heroParty.team[i].Attack();
-                    yield return new WaitForSeconds(timeBetweenAttacks);
+                if(heroParty.count() > i) { 
+                    if (!heroParty.defeatedCaracter.Contains(heroParty.team[i])) { 
+                        heroParty.team[i].Attack();
+                        yield return new WaitForSeconds(timeBetweenAttacks);
+                    }
                 }
-                if (mobsParty.team[i] && !mobsParty.defeatedCaracter.Contains(mobsParty.team[i]))
-                {
-                    mobsParty.team[i].Attack();
-                    yield return new WaitForSeconds(timeBetweenAttacks);
+                if (mobsParty.count() > i) { 
+                    if (!mobsParty.defeatedCaracter.Contains(mobsParty.team[i]))
+                    {
+                        mobsParty.team[i].Attack();
+                        yield return new WaitForSeconds(timeBetweenAttacks);
+                    }
                 }
             }
         }
