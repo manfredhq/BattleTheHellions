@@ -34,11 +34,20 @@ public class ALivings : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        StartCoroutine(damageAnim(3));
         Debug.Log(gameObject.name + " take " + amount);
         currentHp -= amount;
         if (currentHp <= 0) { Die(); }
     }
 
+    IEnumerator damageAnim(int loopNumber)
+    {
+        for (int i = 0; i < loopNumber*2; i++)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = !gameObject.GetComponent<SpriteRenderer>().enabled;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     private void DealDamage(List<ALivings> targets)
     {
