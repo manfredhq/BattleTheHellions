@@ -48,6 +48,6 @@ public class GameManager : MonoBehaviour
 
     public void OnFightButtonPressed()
     {
-        loadScene(1);
+        loadScene(2);
     }
 }

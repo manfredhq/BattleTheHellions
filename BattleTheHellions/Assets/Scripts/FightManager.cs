@@ -36,6 +36,7 @@ public class FightManager : MonoBehaviour
         heroParty = Player.instance.team;
         attacks = new AttackTypes();
         heroParty.Setup();
+        mobsParty.teamPrefab = DungeonManager.instance.currentRun[DungeonManager.instance.currentRoomIndex].GetComponent<FightRooms>().mobsPrefabs;
         mobsParty.Setup();
         StartCoroutine(StartFight());
     }
