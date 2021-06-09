@@ -28,7 +28,7 @@ public class ALivings : MonoBehaviour
     public int hpGain;
     public int attackGain;
 
-
+    
     private void Start()
     {
         currentHp = maxHp;

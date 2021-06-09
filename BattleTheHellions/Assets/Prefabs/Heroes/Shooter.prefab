@@ -110,3 +110,4 @@ MonoBehaviour:
   experienceDrop: 0
   hpGain: 2
   attackGain: 4
+  index: 1

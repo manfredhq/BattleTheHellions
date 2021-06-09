@@ -47,3 +47,4 @@ MonoBehaviour:
   name: Summoner's book
   description: A book found in an abandonned bookshelf. It increase the experience
     gain.
+  id: 3

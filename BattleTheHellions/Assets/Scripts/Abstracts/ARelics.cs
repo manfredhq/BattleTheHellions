@@ -7,6 +7,8 @@ public class ARelics : MonoBehaviour
     public RelicRarity rarity = RelicRarity.common;
     public new string name;
     public string description;
+
+    public int id;
     public virtual void Effect()
     {
         Debug.Log("relic name " + name + " has use its effect");

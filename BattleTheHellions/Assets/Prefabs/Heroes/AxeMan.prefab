@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066cb309f9cb36489836c1a6696f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Axe Man
   attackType: 0
   isHeroParty: 1
   isRanged: 0

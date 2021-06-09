@@ -46,3 +46,4 @@ MonoBehaviour:
   rarity: 1
   name: Silver Lance
   description: A lance made of silver. It improve the attack of every character.
+  id: 4

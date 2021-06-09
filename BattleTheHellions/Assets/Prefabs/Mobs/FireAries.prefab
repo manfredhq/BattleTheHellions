@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948545cf3cee6554c8340f1ad94943cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Fire Aries
   attackType: 0
   isHeroParty: 0
   isRanged: 0
