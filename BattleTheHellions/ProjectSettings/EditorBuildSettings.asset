@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fountain.unity
     guid: 453ee0c45fe5ba942af328d00deaebab
+  - enabled: 1
+    path: Assets/Scenes/Treasure.unity
+    guid: 74089a0414547c24ebf9da6f9eaa4438
   m_configObjects: {}

@@ -130,7 +130,7 @@ public class DungeonManager : MonoBehaviour
             }
             else if (easyDungeon[i] == roomTypes.treasure)
             {
-
+                currentRun.Add(null);
             }
         }
         selectedDifficulty = 1;
@@ -157,6 +157,12 @@ public class DungeonManager : MonoBehaviour
 
     public void NextRoom()
     {
+        if(currentRoomIndex == currentRun.Count)
+        {
+            currentRoomIndex = 0;
+            GameManager.instance.loadScene(0);
+            return;
+        }
         Debug.Log("tata");
         List<roomTypes> rooms = new List<roomTypes>();
         if(selectedDifficulty == 1)
@@ -186,7 +192,7 @@ public class DungeonManager : MonoBehaviour
         }
         else if (rooms[currentRoomIndex] == roomTypes.treasure)
         {
-
+            GameManager.instance.loadScene(4);
         }
     }
 }

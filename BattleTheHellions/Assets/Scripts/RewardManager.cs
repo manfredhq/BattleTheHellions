@@ -36,4 +36,14 @@ public class RewardManager : MonoBehaviour
     {
         experienceMultiplier -= (percentage / 100);
     }
+
+    public void RandomRelic()
+    {
+
+    }
+
+    public void RandomGold(float multiplier = 1f)
+    {
+
+    }
 }

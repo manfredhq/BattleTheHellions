@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreasureRooms : ARooms
 {
+
+    public float goldMultiplier = 1;
+
+    public RewardManager rewardManager;
+
+    public Button takeButton;
+    public Button leaveButton;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        takeButton.onClick.AddListener(OnTakeButton);
+        leaveButton.onClick.AddListener(OnLeaveButton);
+        takeButton.interactable = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTakeButton()
     {
-        
+        rewardManager.RandomRelic();
+        rewardManager.RandomGold(goldMultiplier);
+        takeButton.interactable = false;
+    }
+
+    public void OnLeaveButton()
+    {
+        DungeonManager.instance.currentRoomIndex++;
+        GameManager.instance.loadScene(2);
     }
 }
