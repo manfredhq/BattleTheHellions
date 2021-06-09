@@ -12,7 +12,7 @@ Graphism intended:
 - Pixels  
   
 The idea of the game:
-1. A main **hero** that improve **through each run**.
+1. <s>A main **hero** that improve **through each run**.</s>
 1. An inventory composed of a certain amount of **relics**.
 1. A map with a **patern that doesn't change** but monster's change, loots change aswell.
 1. Different kind of **rooms** (battle rooms, healing rooms, curio rooms etc ...).
