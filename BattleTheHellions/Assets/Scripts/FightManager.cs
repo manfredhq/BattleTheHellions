@@ -68,7 +68,9 @@ public class FightManager : MonoBehaviour
                 relic.UndoEffect();
             }
 
-            GameManager.instance.loadScene(0);
+            DungeonManager.instance.currentRoomIndex++;
+
+            GameManager.instance.loadScene(2);
         }
         else if(heroParty.isTeamDefeated)
         {

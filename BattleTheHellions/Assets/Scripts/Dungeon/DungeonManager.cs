@@ -8,12 +8,19 @@ public class DungeonManager : MonoBehaviour
 {
     public int currentRoomIndex = 0;
 
+    public GameObject selectDifficultyUI;
+
+    public GameObject nextRoomUI;
+    public Button nextRoomButton;
+
     public Button easyButton;
     public Button mediumButton;
     public Button hardButton;
     public Button insaneButton;
 
     public static DungeonManager instance;
+
+    public TreasureRooms treasureRoom;
 
     public List<roomTypes> easyDungeon = new List<roomTypes>();
 
@@ -32,7 +39,7 @@ public class DungeonManager : MonoBehaviour
     public List<FightRooms> insaneFightRooms = new List<FightRooms>();
 
     public List<ARooms> currentRun = new List<ARooms>();
-
+    private int selectedDifficulty = 0;
 
     private void Awake()
     {
@@ -46,6 +53,7 @@ public class DungeonManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
+
 
     private void Update()
     {
@@ -81,6 +89,31 @@ public class DungeonManager : MonoBehaviour
                 insaneButton.onClick.AddListener(GenerateInsane);
             }
         }
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            selectDifficultyUI = GameObject.Find("DifficultyUI");
+            if (nextRoomUI == null)
+            {
+
+                nextRoomUI = GameObject.Find("NextRoomUI");
+            }
+            if(nextRoomButton == null)
+            {
+                nextRoomButton = nextRoomUI.GetComponent<Button>();
+                nextRoomButton.onClick.AddListener(NextRoom);
+            }
+        }
+
+        if(currentRoomIndex == 0 && selectDifficultyUI!=null && nextRoomUI!= null)
+        {
+            selectDifficultyUI.SetActive(true);
+            nextRoomUI.SetActive(false);
+        }
+        else if(selectDifficultyUI != null && nextRoomUI != null)
+        {
+            selectDifficultyUI.SetActive(false);
+            nextRoomUI.SetActive(true);
+        }
     }
     void GenerateEasy()
     {
@@ -93,41 +126,68 @@ public class DungeonManager : MonoBehaviour
             }
             else if (easyDungeon[i] == roomTypes.fountain)
             {
-
+                currentRun.Add(null);
             }
             else if (easyDungeon[i] == roomTypes.treasure)
             {
 
             }
         }
-        
-        if(easyDungeon[currentRoomIndex] == roomTypes.fight)
-        {
-            GameManager.instance.loadScene(1);
-        }
-        else if(easyDungeon[currentRoomIndex] == roomTypes.fountain)
-        {
-
-        }
-        else if(easyDungeon[currentRoomIndex] == roomTypes.treasure)
-        {
-
-        }
+        selectedDifficulty = 1;
+        NextRoom();
     }
 
     void GenerateMedium()
     {
 
+        selectedDifficulty = 2;
     }
 
     void GenerateHard()
     {
+        selectedDifficulty = 3;
 
     }
 
     void GenerateInsane()
     {
 
+        selectedDifficulty = 4;
+    }
+
+    public void NextRoom()
+    {
+        Debug.Log("tata");
+        List<roomTypes> rooms = new List<roomTypes>();
+        if(selectedDifficulty == 1)
+        {
+            rooms = easyDungeon;
+        }
+        else if(selectedDifficulty == 2)
+        {
+            rooms = mediumDungeon;
+        }
+        else if (selectedDifficulty == 3)
+        {
+            rooms = hardDungeon;
+        }
+        else if (selectedDifficulty == 4)
+        {
+            rooms = insaneDungeon;
+        }
+
+        if (rooms[currentRoomIndex] == roomTypes.fight)
+        {
+            GameManager.instance.loadScene(1);
+        }
+        else if (rooms[currentRoomIndex] == roomTypes.fountain)
+        {
+            GameManager.instance.loadScene(3);
+        }
+        else if (rooms[currentRoomIndex] == roomTypes.treasure)
+        {
+
+        }
     }
 }
 

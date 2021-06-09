@@ -19,6 +19,14 @@ public class RewardManager : MonoBehaviour
             heroe.GetComponent<ALivings>().EarnExperience((int)(amount*experienceMultiplier));
         }
     }
+
+    public void EarnExperience(int amount)
+    {
+        foreach (var heroe in Player.instance.heroes)
+        {
+            heroe.GetComponent<ALivings>().EarnExperience((int)(amount * experienceMultiplier));
+        }
+    }
     public void increaseExperienceMultiplier(int percentage)
     {
         experienceMultiplier += (percentage / 100);
