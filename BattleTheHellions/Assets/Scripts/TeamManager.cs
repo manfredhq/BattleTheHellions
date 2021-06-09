@@ -21,6 +21,11 @@ public class TeamManager : MonoBehaviour
         }
         if (isPlayerTeam)
         {
+
+            foreach (var relic in Player.instance.GetComponent<Inventory>().relicsOwn)
+            {
+                relic.Effect();
+            }
             for (int i = 0; i < Player.instance.heroes.Count; i++)
             {
                 Player.instance.heroes[i].SetActive(true);
@@ -28,6 +33,7 @@ public class TeamManager : MonoBehaviour
                 Player.instance.heroes[i].transform.SetPositionAndRotation(spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
                 team.Add(Player.instance.heroes[i].GetComponent<ALivings>());
             }
+
         }
         else { 
             for (int i = 0; i < teamPrefab.Count; i++)

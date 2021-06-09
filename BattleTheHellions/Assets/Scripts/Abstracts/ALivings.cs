@@ -18,7 +18,15 @@ public class ALivings : MonoBehaviour
     public int maxAttack;
     public int currentAttack;
 
+    public int currentExperience;
+    public int level = 1;
+
     public TeamManager team;
+
+    public int experienceDrop;
+
+    public int hpGain;
+    public int attackGain;
 
 
     private void Start()
@@ -130,5 +138,22 @@ public class ALivings : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void EarnExperience(int amount)
+    {
+        currentExperience += amount;
+        while(currentExperience > level * level)
+        {
+            LevelUP();
+        }
+    }
+
+    private void LevelUP()
+    {
+        currentExperience -= level * level;
+        level++;
+        currentAttack += attackGain;
+        currentHp += hpGain;
     }
 }

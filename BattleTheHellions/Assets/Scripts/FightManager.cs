@@ -13,6 +13,8 @@ public class FightManager : MonoBehaviour
 
     public List<GameObject> spawnPoints = new List<GameObject>();
 
+    public RewardManager rewardManager;
+
     public TeamManager mobsParty;
     public TeamManager heroParty;
 
@@ -50,6 +52,8 @@ public class FightManager : MonoBehaviour
         if (mobsParty.isTeamDefeated)
         {
             //TODO REWARDS
+            rewardManager.EarnExperience();
+
 
             Player.instance.heroes[0].GetComponent<ALivings>().maxHp += 10;
 
@@ -57,6 +61,10 @@ public class FightManager : MonoBehaviour
             foreach (var  heroe in Player.instance.heroes)
             {
                 heroe.SetActive(false);
+            }
+            foreach (var relic in Player.instance.GetComponent<Inventory>().relicsOwn)
+            {
+                relic.UndoEffect();
             }
 
             GameManager.instance.loadScene(0);

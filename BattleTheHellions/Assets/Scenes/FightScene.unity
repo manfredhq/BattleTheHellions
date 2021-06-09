@@ -535,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855386348}
   - component: {fileID: 855386349}
+  - component: {fileID: 855386350}
   m_Layer: 0
   m_Name: FightManager
   m_TagString: Untagged
@@ -577,8 +578,22 @@ MonoBehaviour:
   - {fileID: 157397984}
   - {fileID: 1662653329}
   - {fileID: 1014633765}
+  rewardManager: {fileID: 855386350}
   mobsParty: {fileID: 496496826}
   heroParty: {fileID: 0}
+--- !u!114 &855386350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855386347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34edde2a65c3964e9f674cf0430fe3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceMultiplier: 1
 --- !u!1 &893102342
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20761b75289c2d641b6dca57a0b638fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightButton: {fileID: 0}
 --- !u!1 &1459600231
 GameObject:
   m_ObjectHideFlags: 0
