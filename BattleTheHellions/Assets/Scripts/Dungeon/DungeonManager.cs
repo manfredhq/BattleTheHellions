@@ -39,7 +39,7 @@ public class DungeonManager : MonoBehaviour
     public List<FightRooms> insaneFightRooms = new List<FightRooms>();
 
     public List<ARooms> currentRun = new List<ARooms>();
-    private int selectedDifficulty = 0;
+    public int selectedDifficulty = 0;
 
     private void Awake()
     {

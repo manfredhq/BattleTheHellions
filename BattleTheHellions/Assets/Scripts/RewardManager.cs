@@ -6,6 +6,8 @@ public class RewardManager : MonoBehaviour
 {
     public float experienceMultiplier = 1;
 
+
+    
     public void EarnExperience()
     {
         int amount = 0;
@@ -37,9 +39,24 @@ public class RewardManager : MonoBehaviour
         experienceMultiplier -= (percentage / 100);
     }
 
-    public void RandomRelic()
+    public ARelics RandomRelic()
     {
-
+        GameManager gManager = GameManager.instance;
+        ARelics reward = null;
+        if (DungeonManager.instance.selectedDifficulty == 1)
+        {
+            var rng = Random.Range(0, 1);
+            for (int i = 0; i < gManager.easyRelicRates.Length; i++)
+            {
+                if(rng <= gManager.easyRelicRates[i] && reward == null)
+                {
+                    var r = Random.Range(0, gManager.relicsAvailable[i].Count);
+                    reward = gManager.relicsAvailable[i][r];
+                    i = 7;
+                }
+            }
+        }
+        return reward;
     }
 
     public void RandomGold(float multiplier = 1f)

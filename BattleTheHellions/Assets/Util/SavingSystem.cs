@@ -8,8 +8,20 @@ public static class SavingSystem
 
     public static void Save(List<GameObject> heroes, List<ARelics> relics)
     {
+        CleanDirectory();
         SaveHeroes(heroes);
         SaveRelics(relics);
+    }
+
+    private static void CleanDirectory()
+    {
+        var hi = Directory.GetFiles(Application.persistentDataPath);
+
+        for (int i = 0; i < hi.Length; i++)
+        {
+            File.Delete(hi[i]);
+            Debug.Log("file " + hi[i] + " has been deleted");
+        }
     }
 
     public static void SaveHeroes(List<GameObject> heroes)

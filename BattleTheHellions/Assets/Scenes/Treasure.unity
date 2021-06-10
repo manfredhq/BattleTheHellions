@@ -1472,6 +1472,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceMultiplier: 1
+  commons:
+  - {fileID: 3915811511368780192, guid: 391ba58510aedad40b4bbc86b7db8552, type: 3}
+  uncommons:
+  - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
+  rare:
+  - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
+  epic: []
+  legendary: []
+  mythic: []
+  godlike:
+  - {fileID: 8508622266805427633, guid: 8ea3b9977a6d9d84291f4041f77beb1f, type: 3}
+  - {fileID: 2301487795435939613, guid: 8cab86fdb722c0a4e9ac9c87be2f9d05, type: 3}
+  easyRelicRates:
+  - 0.4
+  - 0.3
+  - 0.15
+  - 0.1
+  - 0.025
+  - 0.015
+  - 0.01
+  mediumRelicRates:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  hardRelicRates:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  insaneRelicRates:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!1 &1035203930
 GameObject:
   m_ObjectHideFlags: 0

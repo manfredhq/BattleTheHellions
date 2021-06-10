@@ -15,9 +15,37 @@ public class GameManager : MonoBehaviour
     public List<GameObject> heroesPrefab = new List<GameObject>();
 
     public List<ARelics> relicsList = new List<ARelics>();
+
+
+
+    public List<ARelics> commons = new List<ARelics>();
+    public List<ARelics> uncommons = new List<ARelics>();
+    public List<ARelics> rare = new List<ARelics>();
+    public List<ARelics> epic = new List<ARelics>();
+    public List<ARelics> legendary = new List<ARelics>();
+    public List<ARelics> mythic = new List<ARelics>();
+    public List<ARelics> godlike = new List<ARelics>();
+
+    public List<List<ARelics>> relics = new List<List<ARelics>>();
+
+    public List<List<ARelics>> relicsAvailable = new List<List<ARelics>>();
+
+    public float[] easyRelicRates = new float[7];
+    public float[] mediumRelicRates = new float[7];
+    public float[] hardRelicRates = new float[7];
+    public float[] insaneRelicRates = new float[7];
+
     // Start is called before the first frame update
     void Start()
     {
+        relics.Add(commons);
+        relics.Add(uncommons);
+        relics.Add(rare);
+        relics.Add(epic);
+        relics.Add(legendary);
+        relics.Add(mythic);
+        relics.Add(godlike);
+        relicsAvailable = relics;
         fightButton.onClick.AddListener(OnFightButtonPressed);
         saveButton.onClick.AddListener(Save);
         loadButton.onClick.AddListener(Load);
@@ -81,14 +109,13 @@ public class GameManager : MonoBehaviour
         }
 
 
-        List<ARelics> relicsReplace = new List<ARelics>();
+        Player.instance.inventory.relicsOwn = new List<ARelics>();
         for (int i = 0; i < relics.Count; i++)
         {
             ARelics temp = relicsList[relics[i]];
-            relicsReplace.Add(temp);
+            Player.instance.inventory.GetRelic(temp);
         }
 
-        Player.instance.inventory.relicsOwn = relicsReplace;
     }
     public void OnFightButtonPressed()
     {
