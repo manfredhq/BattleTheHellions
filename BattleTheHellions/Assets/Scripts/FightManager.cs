@@ -56,8 +56,6 @@ public class FightManager : MonoBehaviour
             rewardManager.EarnExperience();
 
 
-            Player.instance.heroes[0].GetComponent<ALivings>().maxHp += 10;
-
             Player.instance.team.Clean();
             foreach (var  heroe in Player.instance.heroes)
             {

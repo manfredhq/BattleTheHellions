@@ -20,7 +20,6 @@ public static class SavingSystem
         for (int i = 0; i < hi.Length; i++)
         {
             File.Delete(hi[i]);
-            Debug.Log("file " + hi[i] + " has been deleted");
         }
     }
 

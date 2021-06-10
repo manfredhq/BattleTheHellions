@@ -153,7 +153,7 @@ public class ALivings : MonoBehaviour
     {
         currentExperience -= level * level;
         level++;
-        currentAttack += attackGain;
-        currentHp += hpGain;
+        maxAttack += attackGain;
+        maxHp += hpGain;
     }
 }
