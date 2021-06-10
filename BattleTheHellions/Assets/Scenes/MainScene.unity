@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 418983949}
   heroes: []
+  inventory: {fileID: 418983950}
 --- !u!114 &418983949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,10 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667037cc526467d41b3786ed606b4607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relicsOwn:
-  - {fileID: 3915811511368780192, guid: 391ba58510aedad40b4bbc86b7db8552, type: 3}
-  - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
-  - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
+  relicsOwn: []
 --- !u!1 &472183337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1459,12 @@ MonoBehaviour:
   heroesPrefab:
   - {fileID: 4398488211284737178, guid: a3bc9e55646db6b4da5c3b7f34e02dfa, type: 3}
   - {fileID: 7889049683976016812, guid: 8cee8a09e3ef85f46b2780e0ce449ba1, type: 3}
+  relicsList:
+  - {fileID: 3915811511368780192, guid: 391ba58510aedad40b4bbc86b7db8552, type: 3}
+  - {fileID: 8508622266805427633, guid: 8ea3b9977a6d9d84291f4041f77beb1f, type: 3}
+  - {fileID: 2301487795435939613, guid: 8cab86fdb722c0a4e9ac9c87be2f9d05, type: 3}
+  - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
+  - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
 --- !u!1 &1759939948
 GameObject:
   m_ObjectHideFlags: 0

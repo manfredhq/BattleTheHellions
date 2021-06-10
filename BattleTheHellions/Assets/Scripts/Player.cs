@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public List<GameObject> heroes = new List<GameObject>();
 
+    public Inventory inventory;
+
     private void Awake()
     {
         // if the singleton hasn't been initialized yet

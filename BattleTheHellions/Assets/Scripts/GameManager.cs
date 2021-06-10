@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Button loadButton;
 
     public List<GameObject> heroesPrefab = new List<GameObject>();
+
+    public List<ARelics> relicsList = new List<ARelics>();
     // Start is called before the first frame update
     void Start()
     {
@@ -59,15 +61,15 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
-        SavingSystem.SaveHeroes(Player.instance.heroes);
+        SavingSystem.Save(Player.instance.heroes, Player.instance.inventory.relicsOwn);
     }
 
     public void Load()
     {
         var heroes = SavingSystem.LoadHeroes();
+        var relics = SavingSystem.LoadRelics();
         for (int i = 0; i < heroes.Count; i++)
         {
-            Debug.Log(heroes[i].level);
             if(Player.instance.heroes.Count > i)
             {
                 Destroy(Player.instance.heroes[i].gameObject);
@@ -77,6 +79,16 @@ public class GameManager : MonoBehaviour
             Player.instance.heroes[i] = temp;
             temp.GetComponent<HeroManager>().Setup(heroes[i]);
         }
+
+
+        List<ARelics> relicsReplace = new List<ARelics>();
+        for (int i = 0; i < relics.Count; i++)
+        {
+            ARelics temp = relicsList[relics[i]];
+            relicsReplace.Add(temp);
+        }
+
+        Player.instance.inventory.relicsOwn = relicsReplace;
     }
     public void OnFightButtonPressed()
     {
