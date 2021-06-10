@@ -28,7 +28,9 @@ public class ALivings : MonoBehaviour
     public int hpGain;
     public int attackGain;
 
-    
+    public float lifeStealPercentage = 0;
+    public float currentLifeStealPercentage = 0;
+
     private void Start()
     {
         currentHp = maxHp;
@@ -49,12 +51,14 @@ public class ALivings : MonoBehaviour
         if (currentHp > maxHp) { currentHp = maxHp; }
     }
 
-    public void TakeDamage(int amount)
+    public int TakeDamage(int amount)
     {
         StartCoroutine(damageAnim(3));
         Debug.Log(gameObject.name + " take " + amount);
         currentHp -= amount;
-        if (currentHp <= 0) { Die(); }
+
+        if (currentHp <= 0) { StartCoroutine(Die()); }
+        return amount;
     }
 
     IEnumerator damageAnim(int loopNumber)
@@ -71,12 +75,14 @@ public class ALivings : MonoBehaviour
         foreach (var target in targets)
         {
             Debug.Log(gameObject.name + " is targeting " + target.gameObject.name);
-            target.TakeDamage(currentAttack);
+
+            Heal((int)(target.TakeDamage(currentAttack) * currentLifeStealPercentage));
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
+        yield return new WaitForSeconds(0.2f);
         Debug.Log("die " + gameObject.name);
         team.DeathCaracter(this);
         gameObject.SetActive(false);

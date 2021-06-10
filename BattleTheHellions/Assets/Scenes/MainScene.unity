@@ -206,7 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667037cc526467d41b3786ed606b4607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relicsOwn: []
+  relicsOwn:
+  - {fileID: 4807110035302512363, guid: c5a2c3da8971a354097033191c0959b8, type: 3}
 --- !u!1 &472183337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,14 +1466,18 @@ MonoBehaviour:
   - {fileID: 2301487795435939613, guid: 8cab86fdb722c0a4e9ac9c87be2f9d05, type: 3}
   - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
   - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
+  - {fileID: 4807110035302512363, guid: c5a2c3da8971a354097033191c0959b8, type: 3}
+  - {fileID: 0}
   commons:
   - {fileID: 3915811511368780192, guid: 391ba58510aedad40b4bbc86b7db8552, type: 3}
   uncommons:
   - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
   rare:
   - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
-  epic: []
-  legendary: []
+  epic:
+  - {fileID: 1585419981203720248, guid: 2dd01f0d1ad924f468910b1c869b3135, type: 3}
+  legendary:
+  - {fileID: 4807110035302512363, guid: c5a2c3da8971a354097033191c0959b8, type: 3}
   mythic: []
   godlike:
   - {fileID: 2301487795435939613, guid: 8cab86fdb722c0a4e9ac9c87be2f9d05, type: 3}
