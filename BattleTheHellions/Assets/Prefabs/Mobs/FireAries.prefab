@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8967446547361221920}
   - component: {fileID: 8967446547361221923}
   - component: {fileID: 8967446547361221921}
+  - component: {fileID: 2305607433942590699}
   m_Layer: 0
   m_Name: FireAries
   m_TagString: Untagged
@@ -95,11 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948545cf3cee6554c8340f1ad94943cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Fire Aries
   attackType: 0
   isHeroParty: 0
   isRanged: 0
-  maxHp: 25
+  maxHp: 3000
   currentHp: 0
   manaToCast: 80
   currentMana: 0
@@ -111,3 +111,23 @@ MonoBehaviour:
   experienceDrop: 4
   hpGain: 0
   attackGain: 0
+  manaGainByAttack: 25
+  lifeStealPercentage: 0
+  currentLifeStealPercentage: 0
+  spell: {fileID: 2305607433942590699}
+--- !u!114 &2305607433942590699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967446547361221922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ad5aa273046d043a0fd0fe70235280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attType: 3
+  living: {fileID: 8967446547361221921}
+  spellName: Burn 'hem all
+  damageMultiplicator: 2

@@ -28,8 +28,12 @@ public class ALivings : MonoBehaviour
     public int hpGain;
     public int attackGain;
 
+    public int manaGainByAttack = 10;
+
     public float lifeStealPercentage = 0;
     public float currentLifeStealPercentage = 0;
+
+    public ASpell spell;
 
     private void Start()
     {
@@ -76,7 +80,7 @@ public class ALivings : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is targeting " + target.gameObject.name);
 
-            Heal((int)(target.TakeDamage(currentAttack) * currentLifeStealPercentage));
+            Heal((int)(target.TakeDamage(currentAttack) * (currentLifeStealPercentage/100)));
         }
     }
 
@@ -90,11 +94,20 @@ public class ALivings : MonoBehaviour
 
     public void Attack()
     {
-        var targets = FightManager.instance.attacks.Attack(attackType, isHeroParty);
-        StartCoroutine(positionChangement(targets));
-        DealDamage(targets);
+        
+        if(currentMana >= manaToCast)
+        {
+            var targets = spell.SelectTarget();
+            StartCoroutine(positionChangement(targets));
+            spell.CastSpell();
+        }
+        else 
+        {
+            var targets = FightManager.instance.attacks.Attack(attackType, isHeroParty);
+            StartCoroutine(positionChangement(targets));
+            DealDamage(targets);
+        }
     }
-
     IEnumerator positionChangement(List<ALivings> targets)
     {
         if (!isRanged) { 

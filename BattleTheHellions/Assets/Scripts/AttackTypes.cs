@@ -18,8 +18,24 @@ public class AttackTypes : MonoBehaviour
         {
             return RowAtt(isHeroParty);
         }
+        else if (type == attTypes.all)
+        {
+            return AllAtt(isHeroParty);
+        }
 
         return null;
+    }
+
+    private List<ALivings> AllAtt(bool isHeroParty)
+    {
+        if (isHeroParty)
+        {
+            return FightManager.instance.mobsParty.team;
+        }
+        else
+        {
+            return FightManager.instance.heroParty.team;
+        }
     }
 
     private List<ALivings> SingleAtt(bool isHeroParty)
@@ -166,5 +182,6 @@ public enum attTypes
 {
     single,
     line,
-    row
+    row,
+    all
 }

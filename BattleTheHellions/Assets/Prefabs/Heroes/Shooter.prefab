@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7889049683976016802}
   - component: {fileID: 7889049683976016813}
   - component: {fileID: 7889049683976016803}
+  - component: {fileID: 763799203028847789}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -110,4 +111,25 @@ MonoBehaviour:
   experienceDrop: 0
   hpGain: 2
   attackGain: 4
+  manaGainByAttack: 19
+  lifeStealPercentage: 0
+  currentLifeStealPercentage: 0
+  spell: {fileID: 763799203028847789}
   index: 1
+--- !u!114 &763799203028847789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889049683976016812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049ef62158fab0a4094a9ca3c24c30be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attType: 0
+  living: {fileID: 7889049683976016803}
+  spellName: Multi shoot
+  numberOfShoot: 2
+  damageMultiplcator: 1

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4398488211284737176}
   - component: {fileID: 4398488211284737179}
   - component: {fileID: 4398488211284737177}
+  - component: {fileID: 5844273395791052259}
   m_Layer: 0
   m_Name: AxeMan
   m_TagString: Untagged
@@ -95,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066cb309f9cb36489836c1a6696f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Axe Man
   attackType: 0
   isHeroParty: 1
   isRanged: 0
@@ -111,3 +111,24 @@ MonoBehaviour:
   experienceDrop: 0
   hpGain: 4
   attackGain: 2
+  manaGainByAttack: 15
+  lifeStealPercentage: 0
+  currentLifeStealPercentage: 0
+  spell: {fileID: 5844273395791052259}
+  index: 0
+--- !u!114 &5844273395791052259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398488211284737178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76f4cedf94ef9e4191fa29ea12f08d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attType: 0
+  living: {fileID: 4398488211284737177}
+  spellName: Head hunt
+  damageMultiplicator: 2
