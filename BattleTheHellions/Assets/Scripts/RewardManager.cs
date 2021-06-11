@@ -50,6 +50,11 @@ public class RewardManager : MonoBehaviour
             {
                 if(rng <= gManager.easyRelicRates[i] && reward == null)
                 {
+                    if (gManager.relicsAvailable[i].Count == 0)
+                    {
+                        Debug.Log("No more relics of the quality got are obtainable");
+                        return null;
+                    }
                     var r = Random.Range(0, gManager.relicsAvailable[i].Count);
                     reward = gManager.relicsAvailable[i][r];
                     i = 7;

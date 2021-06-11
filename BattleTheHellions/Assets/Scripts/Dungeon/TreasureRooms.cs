@@ -22,10 +22,18 @@ public class TreasureRooms : ARooms
 
     public void OnTakeButton()
     {
-
-        Player.instance.inventory.GetRelic(rewardManager.RandomRelic());
-        rewardManager.RandomGold(goldMultiplier);
-        takeButton.interactable = false;
+        ARelics relic = rewardManager.RandomRelic();
+        if(relic != null)
+        {
+            Player.instance.inventory.GetRelic(relic);
+            rewardManager.RandomGold(goldMultiplier);
+            takeButton.interactable = false;
+        }
+        else
+        {
+            Debug.Log("No relic found");
+        }
+        
     }
 
     public void OnLeaveButton()
