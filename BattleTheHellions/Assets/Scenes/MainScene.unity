@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418983947}
   - component: {fileID: 418983948}
+  - component: {fileID: 418983951}
   - component: {fileID: 418983949}
   - component: {fileID: 418983950}
   m_Layer: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: {fileID: 418983949}
+  username: Unlogged
   heroes: []
   inventory: {fileID: 418983950}
 --- !u!114 &418983949
@@ -208,6 +210,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   relicsOwn:
   - {fileID: 4807110035302512363, guid: c5a2c3da8971a354097033191c0959b8, type: 3}
+--- !u!114 &418983951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418983946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10789577d2c70a342b859f0c4adab462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameText: {fileID: 1522867987}
 --- !u!1 &472183337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585131000}
   - component: {fileID: 1585131001}
+  - component: {fileID: 1585131002}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1516,6 +1532,18 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+--- !u!114 &1585131002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585130999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a88def7494fc344fa445dd44d095369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759939948
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public TeamManager team;
     public static Player instance;
 
+    public string username = "Unlogged";
 
     public List<GameObject> heroes = new List<GameObject>();
 
