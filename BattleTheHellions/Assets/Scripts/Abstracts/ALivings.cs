@@ -41,6 +41,9 @@ public class ALivings : MonoBehaviour
 
     public bool isClickable = false;
 
+
+    private TeamScene teamSceneManager;
+
     private void Start()
     {
         if(name != null && name != gameObject.name)
@@ -187,7 +190,9 @@ public class ALivings : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isClickable)
-            Debug.Log("Show information about this character");
+        if (isClickable) {
+            teamSceneManager = GameObject.Find("TeamSceneManager").GetComponent<TeamScene>();
+            teamSceneManager.ShowInfo(this);
+        }
     }
 }
