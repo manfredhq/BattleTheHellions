@@ -57,7 +57,7 @@ public class ALivings : MonoBehaviour
 
     public int TakeDamage(int amount)
     {
-        StartCoroutine(damageAnim(3));
+        //StartCoroutine(damageAnim(3));
         Debug.Log(gameObject.name + " take " + amount);
         currentHp -= amount;
 
@@ -153,16 +153,10 @@ public class ALivings : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void EarnExperience(int amount)
     {
         currentExperience += amount;
-        while(currentExperience > level * level)
+        while(currentExperience >= level * level)
         {
             LevelUP();
         }
