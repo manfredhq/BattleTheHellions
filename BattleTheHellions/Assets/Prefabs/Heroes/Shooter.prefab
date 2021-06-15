@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066cb309f9cb36489836c1a6696f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Shooter
   attackType: 0
   isHeroParty: 1
   isRanged: 1
@@ -114,6 +115,7 @@ MonoBehaviour:
   manaGainByAttack: 19
   lifeStealPercentage: 0
   currentLifeStealPercentage: 0
+  numberOfHit: 1
   spell: {fileID: 763799203028847789}
   index: 1
 --- !u!114 &763799203028847789

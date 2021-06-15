@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948545cf3cee6554c8340f1ad94943cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: FireAries
   attackType: 0
   isHeroParty: 0
   isRanged: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   manaGainByAttack: 25
   lifeStealPercentage: 0
   currentLifeStealPercentage: 0
+  numberOfHit: 1
   spell: {fileID: 2305607433942590699}
 --- !u!114 &2305607433942590699
 MonoBehaviour:

@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066cb309f9cb36489836c1a6696f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: AxeMan
   attackType: 0
   isHeroParty: 1
   isRanged: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   manaGainByAttack: 15
   lifeStealPercentage: 0
   currentLifeStealPercentage: 0
+  numberOfHit: 1
   spell: {fileID: 5844273395791052259}
   index: 0
 --- !u!114 &5844273395791052259

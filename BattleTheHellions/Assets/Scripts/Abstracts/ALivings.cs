@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ALivings : MonoBehaviour
 {
+    public new string name;
+
     public attTypes attackType = attTypes.single;
     public bool isHeroParty;
 
@@ -33,10 +35,16 @@ public class ALivings : MonoBehaviour
     public float lifeStealPercentage = 0;
     public float currentLifeStealPercentage = 0;
 
+    public int numberOfHit = 1;
+
     public ASpell spell;
 
     private void Start()
     {
+        if(name != null && name != gameObject.name)
+        {
+            gameObject.name = name;
+        }
         currentHp = maxHp;
         currentAttack = maxAttack;
         DontDestroyOnLoad(this.gameObject);
@@ -79,7 +87,7 @@ public class ALivings : MonoBehaviour
         foreach (var target in targets)
         {
             Debug.Log(gameObject.name + " is targeting " + target.gameObject.name);
-
+            
             Heal((int)(target.TakeDamage(currentAttack) * (currentLifeStealPercentage/100)));
         }
     }
@@ -105,7 +113,11 @@ public class ALivings : MonoBehaviour
         {
             var targets = FightManager.instance.attacks.Attack(attackType, isHeroParty);
             StartCoroutine(positionChangement(targets));
-            DealDamage(targets);
+            for (int i = 0; i < numberOfHit; i++)
+            {
+                DealDamage(targets);
+            }
+            
         }
     }
     IEnumerator positionChangement(List<ALivings> targets)

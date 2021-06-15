@@ -49,6 +49,10 @@ public class GameManager : MonoBehaviour
         fightButton.onClick.AddListener(OnFightButtonPressed);
         saveButton.onClick.AddListener(Save);
         loadButton.onClick.AddListener(Load);
+        for (int i = 0; i < relicsList.Count; i++)
+        {
+            relicsList[i].id = i;
+        }
     }
 
     private void Awake()
