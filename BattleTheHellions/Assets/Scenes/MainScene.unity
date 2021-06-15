@@ -208,8 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667037cc526467d41b3786ed606b4607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relicsOwn:
-  - {fileID: 7480397052684359953, guid: b85f192341b490b429120d697bada540, type: 3}
+  relicsOwn: []
 --- !u!114 &418983951
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -134,4 +134,12 @@ public class GameManager : MonoBehaviour
     {
         loadScene(2);
     }
+
+    public void SetHeroesVisible()
+    {
+        foreach (GameObject heroes in Player.instance.heroes)
+        {
+            heroes.SetActive(true);
+        }
+    }
 }

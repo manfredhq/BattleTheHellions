@@ -26,6 +26,7 @@ public class TeamScene : MonoBehaviour
     private void Start()
     {
         mainUI.SetActive(false);
+        GameManager.instance.SetHeroesVisible();
         for (int i = 0; i < Player.instance.heroes.Count; i++)
         {
             GameObject heroe = Player.instance.heroes[i];

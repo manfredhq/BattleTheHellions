@@ -100,7 +100,7 @@ MonoBehaviour:
   attackType: 0
   isHeroParty: 0
   isRanged: 0
-  maxHp: 3000
+  maxHp: 25
   currentHp: 0
   manaToCast: 80
   currentMana: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   currentLifeStealPercentage: 0
   numberOfHit: 1
   spell: {fileID: 2305607433942590699}
+  isClickable: 0
 --- !u!114 &2305607433942590699
 MonoBehaviour:
   m_ObjectHideFlags: 0

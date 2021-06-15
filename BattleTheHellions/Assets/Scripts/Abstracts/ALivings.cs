@@ -71,7 +71,7 @@ public class ALivings : MonoBehaviour
 
     public int TakeDamage(int amount)
     {
-        //StartCoroutine(damageAnim(3));
+        StartCoroutine(damageAnim(3));
         Debug.Log(gameObject.name + " take " + amount);
         currentHp -= amount;
 
@@ -187,6 +187,7 @@ public class ALivings : MonoBehaviour
         maxAttack += attackGain;
         maxHp += hpGain;
     }
+
 
     private void OnMouseDown()
     {
