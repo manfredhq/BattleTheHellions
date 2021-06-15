@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoseidonTrident : ARelics
+public class SniperBronzeBarrel : ARelics
 {
     public override void Effect()
     {
         foreach (var charater in Player.instance.heroes)
         {
-            charater.GetComponent<ALivings>().maxAttack += 65;
+            if (GameManager.instance.heroesPrefab[1].name == charater.name)
+                charater.GetComponent<ALivings>().maxAttack += 1;
         }
     }
 
@@ -16,7 +17,8 @@ public class PoseidonTrident : ARelics
     {
         foreach (var charater in Player.instance.heroes)
         {
-            charater.GetComponent<ALivings>().maxAttack -= 65;
+            if (GameManager.instance.heroesPrefab[1].name == charater.name)
+                charater.GetComponent<ALivings>().maxAttack -= 1;
         }
     }
 }

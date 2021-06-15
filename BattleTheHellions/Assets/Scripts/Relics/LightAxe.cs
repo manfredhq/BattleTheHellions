@@ -18,7 +18,7 @@ public class LightAxe : ARelics
         foreach (var charater in Player.instance.heroes)
         {
             if (GameManager.instance.heroesPrefab[0].name == charater.name)
-                charater.GetComponent<ALivings>().maxHp -= 3;
+                charater.GetComponent<ALivings>().maxAttack -= 3;
         }
     }
 }
