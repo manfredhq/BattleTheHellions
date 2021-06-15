@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relicsOwn:
-  - {fileID: 3654766840364878156, guid: 94dba316f28149b4a99651d555ca9383, type: 3}
+  - {fileID: 7480397052684359953, guid: b85f192341b490b429120d697bada540, type: 3}
 --- !u!114 &418983951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1486,7 @@ MonoBehaviour:
   - {fileID: 1585419981203720248, guid: 2dd01f0d1ad924f468910b1c869b3135, type: 3}
   - {fileID: 4948198038387938543, guid: 5d34633154e94f44b8491795de7eb7cf, type: 3}
   - {fileID: 3654766840364878156, guid: 94dba316f28149b4a99651d555ca9383, type: 3}
+  - {fileID: 7480397052684359953, guid: b85f192341b490b429120d697bada540, type: 3}
   commons:
   - {fileID: 3915811511368780192, guid: 391ba58510aedad40b4bbc86b7db8552, type: 3}
   - {fileID: 3654766840364878156, guid: 94dba316f28149b4a99651d555ca9383, type: 3}
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   - {fileID: 7283551298415319276, guid: 6e508c9c7bcdd5c459553cefbb8409fc, type: 3}
   rare:
   - {fileID: 4217756410048332295, guid: e881d154f5ced4049ad5d8d4e33199a4, type: 3}
+  - {fileID: 7480397052684359953, guid: b85f192341b490b429120d697bada540, type: 3}
   epic:
   - {fileID: 1585419981203720248, guid: 2dd01f0d1ad924f468910b1c869b3135, type: 3}
   legendary:
