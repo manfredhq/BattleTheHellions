@@ -11,6 +11,9 @@ public class PlayerInfo : MonoBehaviour
     private void Update()
     {
         if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            usernameText = GameObject.Find("PlayerName").GetComponent<TMP_Text>();
             usernameText.text = Player.instance.username;
+        }
     }
 }

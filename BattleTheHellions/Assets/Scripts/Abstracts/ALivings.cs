@@ -39,6 +39,8 @@ public class ALivings : MonoBehaviour
 
     public ASpell spell;
 
+    public bool isClickable = false;
+
     private void Start()
     {
         if(name != null && name != gameObject.name)
@@ -48,6 +50,7 @@ public class ALivings : MonoBehaviour
         currentHp = maxHp;
         currentAttack = maxAttack;
         DontDestroyOnLoad(this.gameObject);
+
     }
     public void Setup()
     {
@@ -180,5 +183,11 @@ public class ALivings : MonoBehaviour
         level++;
         maxAttack += attackGain;
         maxHp += hpGain;
+    }
+
+    private void OnMouseDown()
+    {
+        if (isClickable)
+            Debug.Log("Show information about this character");
     }
 }

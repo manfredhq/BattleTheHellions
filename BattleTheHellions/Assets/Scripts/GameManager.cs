@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Button fightButton;
 
+    public Button fightButton;
     public Button saveButton;
     public Button loadButton;
+    public Button teamButton;
 
     public List<GameObject> heroesPrefab = new List<GameObject>();
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         fightButton.onClick.AddListener(OnFightButtonPressed);
         saveButton.onClick.AddListener(Save);
         loadButton.onClick.AddListener(Load);
+        teamButton.onClick.AddListener(() => { loadScene(5); });
         for (int i = 0; i < relicsList.Count; i++)
         {
             relicsList[i].id = i;
@@ -78,9 +80,11 @@ public class GameManager : MonoBehaviour
                 fightButton = GameObject.Find("Fight").GetComponent<Button>();
                 saveButton = GameObject.Find("Save").GetComponent<Button>();
                 loadButton = GameObject.Find("Load").GetComponent<Button>();
+                teamButton = GameObject.Find("Team").GetComponent<Button>();
                 fightButton.onClick.AddListener(OnFightButtonPressed);
                 saveButton.onClick.AddListener(Save);
                 loadButton.onClick.AddListener(Load);
+                teamButton.onClick.AddListener(delegate{ loadScene(5); });
             }
         }
     }
@@ -89,6 +93,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(index);
         
+    }
+
+    public int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
     public void Save()
