@@ -646,16 +646,46 @@ MonoBehaviour:
   mediumButton: {fileID: 0}
   hardButton: {fileID: 0}
   insaneButton: {fileID: 0}
-  easyDungeon: 0000000000000000010000000000000002000000
+  treasureRoom: {fileID: 0}
+  easyDungeon: 
+  easyNumberOfRoom: 18
+  easyMaxTreasure: 2
+  easyMaxFountain: 2
+  easyRates:
+  - 70
+  - 15
+  - 15
   mediumDungeon: 
+  mediumNumberOfRoom: 23
+  mediumMaxTreasure: 3
+  mediumMaxFountain: 2
+  mediumRates:
+  - 65
+  - 17.5
+  - 17.5
   hardDungeon: 
+  hardNumberOfRoom: 33
+  hardMaxTreasure: 5
+  hardMaxFountain: 1
+  hardRates:
+  - 75
+  - 15
+  - 10
   insaneDungeon: 
+  insaneNumberOfRoom: 48
+  insaneMaxTreasure: 4
+  insaneMaxFountain: 2
+  insaneRates:
+  - 80
+  - 10
+  - 10
   easyFightRooms:
   - {fileID: 27692654060795175, guid: ef7116adb0b283e4890c5d407f0bb6b1, type: 3}
   mediumFightRooms: []
   hardFightRooms: []
   insaneFightRooms: []
   currentRun: []
+  selectedDifficulty: 0
 --- !u!1 &1130910638
 GameObject:
   m_ObjectHideFlags: 0

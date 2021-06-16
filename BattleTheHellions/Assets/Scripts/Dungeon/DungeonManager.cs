@@ -23,12 +23,28 @@ public class DungeonManager : MonoBehaviour
     public TreasureRooms treasureRoom;
 
     public List<roomTypes> easyDungeon = new List<roomTypes>();
+    public int easyNumberOfRoom;
+    public int easyMaxTreasure;
+    public int easyMaxFountain;
+    public List<float> easyRates = new List<float>();
 
     public List<roomTypes> mediumDungeon = new List<roomTypes>();
+    public int mediumNumberOfRoom;
+    public int mediumMaxTreasure;
+    public int mediumMaxFountain;
+    public List<float> mediumRates = new List<float>();
 
     public List<roomTypes> hardDungeon = new List<roomTypes>();
+    public int hardNumberOfRoom;
+    public int hardMaxTreasure;
+    public int hardMaxFountain;
+    public List<float> hardRates = new List<float>();
 
     public List<roomTypes> insaneDungeon = new List<roomTypes>();
+    public int insaneNumberOfRoom;
+    public int insaneMaxTreasure;
+    public int insaneMaxFountain;
+    public List<float> insaneRates = new List<float>();
 
     public List<FightRooms> easyFightRooms = new List<FightRooms>();
 
@@ -117,20 +133,29 @@ public class DungeonManager : MonoBehaviour
     }
     void GenerateEasy()
     {
-        for (int i = 0; i < easyDungeon.Count; i++)
+        int currentNumberTreasure = 0;
+        int currentNumberFountain = 0;
+        for (int i = 0; i < easyNumberOfRoom; i++)
         {
-            if(easyDungeon[i] == roomTypes.fight)
+            float rng = Random.Range(0, 100);
+            if(rng < easyRates[0])
             {
+                easyDungeon.Add(roomTypes.fight);
                 var roomIndex = Random.Range(0, easyFightRooms.Count);
                 currentRun.Add(easyFightRooms[roomIndex]);
             }
-            else if (easyDungeon[i] == roomTypes.fountain)
+            rng -= easyRates[0];
+            if(rng < easyRates[1] && rng > 0 && easyMaxFountain > currentNumberFountain)
             {
-                currentRun.Add(null);
+                currentNumberFountain++;
+                easyDungeon.Add(roomTypes.fountain);
             }
-            else if (easyDungeon[i] == roomTypes.treasure)
+            rng -= easyRates[1];
+
+            if (rng < easyRates[2] && rng > 0 && easyMaxTreasure > currentNumberTreasure)
             {
-                currentRun.Add(null);
+                currentNumberTreasure++;
+                easyDungeon.Add(roomTypes.treasure);
             }
         }
         selectedDifficulty = 1;
