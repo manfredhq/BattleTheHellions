@@ -135,6 +135,8 @@ public class DungeonManager : MonoBehaviour
     {
         int currentNumberTreasure = 0;
         int currentNumberFountain = 0;
+        currentRun = new List<ARooms>();
+        easyDungeon = new List<roomTypes>();
         for (int i = 0; i < easyNumberOfRoom; i++)
         {
             float rng = Random.Range(0, 100);
