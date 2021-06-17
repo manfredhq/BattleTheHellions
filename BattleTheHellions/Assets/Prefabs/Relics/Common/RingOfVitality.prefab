@@ -46,3 +46,5 @@ MonoBehaviour:
   rarity: 0
   name: Ring Of Vitality
   description: A ring that improve ligthly the heath of all your fighter
+  id: 0
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

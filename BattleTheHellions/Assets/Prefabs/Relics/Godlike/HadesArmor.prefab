@@ -48,3 +48,4 @@ MonoBehaviour:
   description: An armor found in the deepest place of hell, just by seeing it glowing
     in dark tone you know that it is a powerfull item.
   id: 1
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

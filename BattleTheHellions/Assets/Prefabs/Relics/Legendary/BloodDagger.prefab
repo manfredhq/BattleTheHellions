@@ -47,3 +47,4 @@ MonoBehaviour:
   name: Blood Dagger
   description: A dagger that was the propertie of a high assasin.
   id: 5
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

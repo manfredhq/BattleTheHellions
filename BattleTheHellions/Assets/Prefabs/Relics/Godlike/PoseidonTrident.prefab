@@ -48,3 +48,4 @@ MonoBehaviour:
   description: A weapon that come from see. Even the best archaeologist wouldn't
     know half of the materials. It's glowing with a deep blue color.
   id: 2
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

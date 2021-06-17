@@ -9,6 +9,8 @@ public class ARelics : MonoBehaviour
     public string description;
 
     public int id;
+
+    public Sprite sprite;
     public virtual void Effect()
     {
         Debug.Log("relic name " + name + " has use its effect");

@@ -48,3 +48,4 @@ MonoBehaviour:
   description: Two axes are better than one isn't it ? add one hit on each attack
     but losing some damages.
   id: 0
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

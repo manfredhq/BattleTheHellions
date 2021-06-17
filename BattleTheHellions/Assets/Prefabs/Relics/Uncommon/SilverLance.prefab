@@ -47,3 +47,4 @@ MonoBehaviour:
   name: Silver Lance
   description: A lance made of silver. It improve the attack of every character.
   id: 4
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}
