@@ -21,6 +21,7 @@ The idea of the game:
 1. Rating system about **???**
 1. **Achievements** (hidden achievements aswell)
 1. **Boss fights**
+2. Ascencion mode when you **finish** game, when you finish a game in a certain level of ascencion it will unlock the next ascencion level which will make the game harder !!  
 
 #### Technicals Ideas
 
