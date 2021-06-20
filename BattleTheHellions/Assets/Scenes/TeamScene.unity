@@ -229,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59728253}
   - component: {fileID: 59728254}
+  - component: {fileID: 59728255}
   m_Layer: 0
   m_Name: TeamSceneManager
   m_TagString: Untagged
@@ -279,6 +280,18 @@ MonoBehaviour:
   NOAText: {fileID: 645388882}
   MTCText: {fileID: 2123210743}
   LifeStealText: {fileID: 1828831737}
+--- !u!114 &59728255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59728252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf48df270478db41a70a39c260d0827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &89408989
 GameObject:
   m_ObjectHideFlags: 0
