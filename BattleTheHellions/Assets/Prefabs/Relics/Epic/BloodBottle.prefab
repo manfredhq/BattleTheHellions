@@ -47,4 +47,6 @@ MonoBehaviour:
   name: Blood Bottle
   description: A bottle of blood found in another world. Must be the property of
     a vampire.
+  effectDescription: Improve Health of all heroes by 150 points.
   id: 6
+  sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}
