@@ -47,5 +47,6 @@ MonoBehaviour:
   name: Summoner's book
   description: A book found in an abandonned bookshelf. It increase the experience
     gain.
+  effectDescription: Experience point earned are augmented by 15 percent.
   id: 3
   sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

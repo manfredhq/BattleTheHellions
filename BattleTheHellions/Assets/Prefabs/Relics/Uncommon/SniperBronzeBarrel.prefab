@@ -47,5 +47,6 @@ MonoBehaviour:
   name: Sniper bronze barrel
   description: A barrel for a sniper made out of bronze. Improve by a little amount
     the damage done using snipers.
+  effectDescription: Improve the attack of all Sniper by 1 point.
   id: 0
   sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

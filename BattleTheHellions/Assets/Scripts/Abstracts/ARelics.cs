@@ -7,6 +7,7 @@ public class ARelics : MonoBehaviour
     public RelicRarity rarity = RelicRarity.common;
     public new string name;
     public string description;
+    public string effectDescription;
 
     public int id;
 

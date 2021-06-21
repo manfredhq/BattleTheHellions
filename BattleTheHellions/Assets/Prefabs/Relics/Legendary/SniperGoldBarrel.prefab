@@ -47,5 +47,6 @@ MonoBehaviour:
   name: Sniper god's barrel
   description: A barrel for a sniper made for gods. Improve by a big amount the damage
     done using snipers.
+  effectDescription: Augment the Attack of all Sniper by 1 percent.
   id: 0
   sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

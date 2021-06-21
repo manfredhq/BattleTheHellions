@@ -46,5 +46,6 @@ MonoBehaviour:
   rarity: 1
   name: Silver Lance
   description: A lance made of silver. It improve the attack of every character.
+  effectDescription: Improve the attack of all heroes by 8 points.
   id: 4
   sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}

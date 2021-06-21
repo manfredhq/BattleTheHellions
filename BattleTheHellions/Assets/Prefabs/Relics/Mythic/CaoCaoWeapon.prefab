@@ -47,5 +47,7 @@ MonoBehaviour:
   name: Cao Cao's Weapon
   description: A weapon found during's the China's wars. This relic's owner was Cao
     Cao.
+  effectDescription: Improve the Lifesteal of all heroes by 11 percent. Improve the
+    Attack of all heroes by 25 points.
   id: 7
   sprite: {fileID: 21300000, guid: caefc04feea250e4f8252b7f8bb3fb64, type: 3}
