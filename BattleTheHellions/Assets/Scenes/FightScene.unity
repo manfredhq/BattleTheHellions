@@ -177,7 +177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232063720}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.5, y: 0.09999994, z: 0.5}
+  m_LocalPosition: {x: 3.25, y: 0.09999994, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496496825}
@@ -303,7 +303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447717176}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.5, y: 0.099999495, z: 4.25}
+  m_LocalPosition: {x: 3.25, y: 0.099999495, z: 4.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496496825}
@@ -767,7 +767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010524779}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.5, y: 0.10000039, z: -3.25}
+  m_LocalPosition: {x: 3.25, y: 0.10000039, z: -3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496496825}
@@ -849,6 +849,7 @@ MonoBehaviour:
   fightButton: {fileID: 0}
   saveButton: {fileID: 0}
   loadButton: {fileID: 0}
+  teamButton: {fileID: 0}
   heroesPrefab: []
   relicsList: []
   commons: []

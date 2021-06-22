@@ -99,7 +99,7 @@ MonoBehaviour:
   name: VoidBat
   attackType: 0
   isHeroParty: 0
-  isRanged: 1
+  isRanged: 0
   maxHp: 25
   currentHp: 0
   manaToCast: 80
